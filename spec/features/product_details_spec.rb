@@ -18,16 +18,15 @@ RSpec.feature "ProductDetails", type: :feature do
     end
   end
 
-  scenario "They see all products" do
+  scenario "They see product details" do
     # ACT
     visit root_path
 
 		click_link("Details »", match: :first)
 
     # DEBUG / VERIFY
-    save_screenshot
 		expect(page).to have_css 'article.product-detail', count: 1
-    save_screenshot
+		save_screenshot
   end
 
 end
